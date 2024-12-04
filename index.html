@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Documentation</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container my-5">
+        <h1 class="text-center">API Documentation</h1>
+        <h2>Endpoints</h2>
+        <ul class="list-group">
+            <li class="list-group-item">
+                <strong>GET /home</strong> - Mendapatkan semua postingan anime
+                <p><strong>Contoh Request:</strong> <code>GET http://localhost:3000/home</code></p>
+                <p><strong>Response:</strong> Mengembalikan daftar semua postingan anime dalam format JSON.</p>
+            </li>
+            <li class="list-group-item">
+                <strong>GET /anime/:id</strong> - Mendapatkan anime berdasarkan ID
+                <p><strong>Contoh Request:</strong> <code>GET http://localhost:3000/anime/1</code></p>
+                <p><strong>Response:</strong> Mengembalikan data anime dengan ID yang diberikan atau pesan 'Anime not found' jika tidak ditemukan.</p>
+            </li>
+            <li class="list-group-item">
+                <strong>GET /genre</strong> - Mendapatkan daftar genre
+                <p><strong>Contoh Request:</strong> <code>GET http://localhost:3000/genre</code></p>
+                <p><strong>Response:</strong> Mengembalikan daftar genre unik dari semua postingan anime dalam format JSON.</p>
+            </li>
+            <li class="list-group-item">
+                <strong>GET /genre/:genre</strong> - Mendapatkan postingan berdasarkan genre
+                <p><strong>Contoh Request:</strong> <code>GET http://localhost:3000/genre/action</code></p>
+                <p><strong>Response:</strong> Mengembalikan daftar postingan anime yang sesuai dengan genre yang diberikan.</p>
+            </li>
+            <li class="list-group-item">
+                <strong>GET /search</strong> - Mencari anime berdasarkan judul
+                <p><strong>Contoh Request:</strong> <code>GET http://localhost:3000/search?title=Naruto</code></p>
+                <p><strong>Response:</strong> Mengembalikan daftar anime yang judulnya mengandung kata kunci yang diberikan.</p>
+            </li>
+            <li class="list-group-item">
+                <strong>POST /add_post</strong> - Menambahkan postingan baru
+                <p><strong>Contoh Request:</strong></p>
+                <pre><code>
+POST http://localhost:3000/add_post
+Content-Type: application/json
+
+{
+    "id": "4",
+    "title": "My Hero Academia",
+    "genre": "Action"
+}
+                </code></pre>
+                <p><strong>Response:</strong> Mengembalikan postingan yang baru ditambahkan dalam format JSON.</p>
+            </li>
+            <li class="list-group-item">
+                <strong>PUT /update_post/:id</strong> - Mengupdate postingan berdasarkan ID
+                <p><strong>Contoh Request:</strong></p>
+                <pre><code>
+PUT http://localhost:3000/update_post/1
+Content-Type: application/json
+
+{
+    "title": "Naruto Shippuden"
+}
+                </code></pre>
+                <p><strong>Response:</strong> Mengembalikan postingan yang telah diperbarui dalam format JSON.</p>
+            </li>
+            <li class="list-group-item">
+                <strong>DELETE /delete_post/:id</strong> - Menghapus postingan berdasarkan ID
+                <p><strong>Contoh Request:</strong> <code>DELETE http://localhost:3000/delete_post/1</code></p>
+                <p><strong>Response:</strong> Mengembalikan status 204 No Content jika berhasil menghapus postingan.</p>
+            </li>
+            <li class="list-group-item">
+                <strong>POST /generate_api</strong> - Menghasilkan API key
+                <p><strong>Contoh Request:</strong> <code>POST http://localhost:3000/generate_api </code></p>
+                <p><strong>Response:</strong> Mengembalikan API key baru dalam format JSON.</p>
+            </li>
+            <li class="list-group-item">
+                <strong>POST /reset-hits</strong> - Mereset hits berdasarkan API key
+                <p><strong>Contoh Request:</strong></p>
+                <pre><code>
+POST http://localhost:3000/reset-hits
+Content-Type: application/json
+
+{
+    "api_key": "your_api_key_here"
+}
+                </code></pre>
+                <p><strong>Response:</strong> Mengembalikan status sukses jika hits berhasil direset.</p>
+            </li>
+            <li class="list-group-item">
+                <strong>GET /docs</strong> - Melihat dokumentasi API
+                <p><strong>Contoh Request:</strong> <code>GET http://localhost:3000/docs</code></p>
+                <p><strong>Response:</strong> Mengembalikan halaman dokumentasi API dalam format HTML.</p>
+            </li>
+        </ul>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

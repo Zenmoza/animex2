@@ -1,0 +1,18 @@
+[
+    {
+        "id": "1",
+        "title": "Naruto",
+        "thumb": "url_to_thumb",
+        "genre": "Action",
+        "stream": "url_to_stream",
+        "download": "url_to_download"
+    },
+    {
+        "id": "2",
+        "title": "One Piece",
+        "thumb": "url_to_thumb",
+        "genre": "Adventure",
+        "stream": "url_to_stream",
+        "download": "url_to_download"
+    }
+]
