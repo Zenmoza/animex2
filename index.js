@@ -4,7 +4,7 @@ const bodyParser = require('body-parser');
 const path = require('path');
 
 const app = express();
-const PORT = 3000;
+const PORT = 80;
 const DB_PATH = path.join(__dirname, 'database.json');
 const API_KEY_PATH = path.join(__dirname, 'apikeys.json');
 
